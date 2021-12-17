@@ -40,6 +40,7 @@ body {
     background-color: #062441;
     font-family: Raleway;
     color: white;
+    overflow: hidden;
   }
 
 
@@ -93,9 +94,6 @@ body {
 
 html, body {
   height: 100%;
-}
-body {
-  overflow: hidden;
 }
 .ocean {
   height: 0%;
