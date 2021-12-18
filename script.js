@@ -1,3 +1,5 @@
+    window.onload = refresh; 
+
       var ppbutton = document.getElementById("audiobutton");
       ppbutton.addEventListener("click", playPause);
       var refreshvar = document.getElementById("refreshbutton");
@@ -30,6 +32,7 @@
             var destination= "musique/midi/";
             var image = "images/midi.jpg";
             document.getElementById("cloudimg").src="images/cloud.png";
+            var number = Math.floor(Math.random() * 13);
         }
         else if (new Date().getHours() >= 7) {
             var destination= "musique/matin/";
@@ -44,22 +47,21 @@
 
         document.getElementById('myAudio').src = destination+song+number+file;
         document.body.style.background = "url("+image+")";
-        if (myVideo.paused) {
-            myVideo.pause();
-        }
-        else {
-            myVideo.play();
-        }
+        myVideo.play();
     };
-     
-    function refresh() {
+
+    function anothermusic() {
         myVideo.currentTime=5000;
     }
 
-    function playPause() { 
+    function refresh() {
+        return anothermusic()
+    }
+
+    function playPause() {     
     if (myVideo.paused) {
         myVideo.play();
-        ppbutton.innerHTML = "Pause";      
+        ppbutton.innerHTML = "Pause";    
         }
     else  {
         myVideo.pause(); 
@@ -71,12 +73,8 @@
     {
         var myvideo = document.getElementById("myAudio");
         document.getElementById("vol").innerHTML=volume_value;
-        myvideo.volume = volume_value / 100;
-        
+        myvideo.volume = volume_value / 100;     
     }
-
-
-
 
       function getDateTime() {
         var now     = new Date(); 
