@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:500);
 
+body {
+  background-color: #062441;
+  font-family: Raleway;
+  color: white;
+  overflow: hidden;
+}
+html, body {
+  height: 100%;
+}
+
 label {
   cursor: pointer;
 }
@@ -7,11 +17,9 @@ label {
 #refreshbutton {
   display: none;
 }
-
 #refreshbutton-label::after {
  content: '\27F3';
  font-size: 4vmin;
-
 }
 
 #audiobutton {
@@ -20,34 +28,26 @@ label {
     margin-right: auto;
     margin: auto;
 }
-
 #audiobutton:checked + #audiobutton-label::after {
     content: '\2759 \2759';
     font-size: 4vmin;
     top: 780px;
   }
-
 #audiobutton-label::after {
    content: '\25BA';
    font-size: 4vmin;
-
-
 }
 
-
-/* Background */  
-body {
-    background-color: #062441;
-    font-family: Raleway;
-    color: white;
-    overflow: hidden;
-  }
-
+#effectbutton:checked + #effectbutton-label::after {
+  opacity: 0.2;
+}
+#effectbutton-label::after {
+  opacity: 0.5;
+}
 
 .slidecontainer {
   width: 100%;
 }
-
 .slider {
   position: relative;
   margin-left: auto; 
@@ -67,13 +67,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-
 }
-
 .slider:hover {
   opacity: 1;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -83,7 +80,6 @@ body {
   background: #045aaa;
   cursor: pointer;
 }
-
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
@@ -92,9 +88,6 @@ body {
   cursor: pointer;
 }
 
-html, body {
-  height: 100%;
-}
 .ocean {
   height: 0%;
   width: 110%;
@@ -112,19 +105,16 @@ html, body {
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
-
 #cloud {
   opacity: 0.7;
   position:fixed;
-  width: 50%;
-  z-index: 0;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
   bottom:0px;
   animation: cloud 3s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
-
-
-
 
 .wave:nth-of-type(2) {
   top: -175px;
@@ -139,7 +129,6 @@ html, body {
     margin-left: -1600px;
  }
 }
-
 @keyframes cloud {
   0% {
     margin-bottom: 0px;
@@ -151,7 +140,6 @@ html, body {
   margin-bottom: 0px;
 }
 }
-
 @keyframes swell {
   0%, 100% {
     transform: translate3d(0, -25px, 0);
