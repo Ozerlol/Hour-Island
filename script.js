@@ -27,6 +27,7 @@
             var destination= "musique/apres-midi/";
             var image = "images/apres-midi.jpg";
             document.getElementById("cloudimg").src="images/cloud.png";
+            var number = Math.floor(Math.random() * 16);
         }
         else if (new Date().getHours() >= 11) {
             var destination= "musique/midi/";
