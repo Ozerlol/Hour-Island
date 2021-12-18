@@ -11,6 +11,7 @@
       myVideo.onended = function() {
         var song="son";
         var file=".mp3"
+        var number = Math.floor(Math.random() * 9);
         if (new Date().getHours() >= 21) {
             var destination= "musique/nuit/";
             var image = "images/nuit.jpg";
